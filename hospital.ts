@@ -16,6 +16,11 @@ export class Hospital {
     this.generateWardGraph();
   }
 
+  /**
+   * @param input input string array of the format.
+   * `[M N],
+   * <ward matrix of size M x N>`
+   */
   private parseInput = (
     input: string[]
   ): { m: number; n: number; wardMatrix: WardStatus[][] } => {
@@ -32,6 +37,10 @@ export class Hospital {
     return { m, n, wardMatrix };
   };
 
+  /**
+   * Generates a Graph representation of the wardMatrix where
+   * non-infected wards have edges with other non-infected and infected wards
+   */
   private generateWardGraph = () => {
     for (let i = 0; i < this.m; i++) {
       for (let j = 0; j < this.n; j++) {
@@ -59,6 +68,11 @@ export class Hospital {
     });
   };
 
+  /**
+   * Calls the getMaxDistanceFromInfected function of the wardGraph
+   * to get the maximum distance between any non-infected and any infected ward
+   * this represents the number of days required to infect everything
+   */
   getTimeUntilAllAreInfected = (): number => {
     return this.wardGraph.getMaxDistanceFromInfected();
   };

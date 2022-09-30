@@ -78,6 +78,11 @@ export class WardGraph {
     return foundInfected ? minDistance : -1;
   };
 
+  /**
+   * Calculates the minimum distance from each uninfected ward
+   * to an infected one via breadth-first search
+   * and returns the maximum of those minimum distances
+   */
   getMaxDistanceFromInfected = () => {
     let max = 0;
     for (const [index, ward] of this.wards.entries()) {

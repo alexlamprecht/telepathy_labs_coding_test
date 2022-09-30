@@ -1,9 +1,13 @@
 import { Hospital } from "./hospital";
+var fs = require("fs");
 
-// const input = ["3 5", "2 1 0 2 1", "1 1 1 1 1", "1 0 0 2 1"];
-// const input = ["1 6", "1 1 2 1 0 1"];
-const input = ["3 6", "2 1 1 1 0 1", "1 1 1 1 0 1", "1 1 1 1 1 1"];
+// read the input string from the file input.txt
+var input = fs.readFileSync("./input.txt", "utf-8");
 
-const hospital = new Hospital(input);
+console.log("input");
+console.table(input);
 
-console.log(hospital.getTimeUntilAllAreInfected());
+const hospital = new Hospital(input.split("\n"));
+
+console.log("\nresult");
+console.log(hospital.getTimeUntilAllAreInfected().toString());
