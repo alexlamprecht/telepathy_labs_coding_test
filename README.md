@@ -32,12 +32,14 @@ The size of the input matrix is at most 1000 x 1000
 Since in each time step all uninfected neighbors to an infected ward are infected the answer to the question `what are minimum units of time after which all patients will be infected` is simply translated to `how far away is the furthest uninfected ward from an infected one`.
 
 Therefore the hospital can be represented in a graph, where the nodes are wards, and the edges represent if wards are neighbors.
-Then a breadth-first-search algorithm can be used to determine the minimum distance from each uninfected ward to an infected one.
+Then a breadth-first-search algorithm with adjecancy list can be used to determine the minimum distance from each uninfected ward to an infected one.
 The maximum value out off those minimum distances is the result.
 
 ## Runtime complexity
 
-    lorem
+Since the matrix and the graph representing the hospital add one additional unit to memory for each ward the space complexity is O(N \* M)
+
+The step with the highest time complexity is the breadth first search with a time complexity of O(V + E), where V and E are the number of vertices and edges of the graph. Therefore, the time complexity of this script is O(N \* M) because we have a maximum of N \* M vertices and ~ 4 \* N \* M edges.
 
 # Installation
 
@@ -45,10 +47,14 @@ Clone the repo to your local machine.
 
 ## install
 
-make sure you have node and npm installed.
+Make sure you have node and npm installed.
 
-run `npm install` to install required node packages.
+Run `npm install` to install required node packages.
 
-## run
+## run & tests
 
-run `npm run start` to run the script.
+Run `npm run start` to run the script.
+
+The input string is read from the `input.txt` file.
+
+Run `npm run test` to run the unit tests.
