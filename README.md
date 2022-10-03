@@ -35,6 +35,10 @@ Therefore the hospital can be represented in a graph, where the nodes are wards,
 Then a breadth-first-search algorithm can be used to determine the minimum distance from each uninfected ward to an infected one.
 The maximum value out off those minimum distances is the result.
 
+## Runtime complexity
+
+    lorem
+
 # Installation
 
 Clone the repo to your local machine.

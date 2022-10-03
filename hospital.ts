@@ -2,10 +2,10 @@ import { WardIndex, WardStatus } from "./models";
 import { WardGraph } from "./wardGraph";
 
 export class Hospital {
-  private m: number;
-  private n: number;
-  private wardMatrix: WardStatus[][];
-  private wardGraph: WardGraph = new WardGraph();
+  m: number;
+  n: number;
+  wardMatrix: WardStatus[][];
+  wardGraph: WardGraph = new WardGraph();
 
   constructor(input: string[]) {
     const { m, n, wardMatrix } = this.parseInput(input);
